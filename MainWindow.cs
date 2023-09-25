@@ -260,6 +260,7 @@ public partial class MainWindow : Form
             var path = $"{GlobalVars.modFolder}\\history\\provinces\\{ProvIDInput.Text} - {ProvNameTextInput.Text}.txt";
             Debug.WriteLine("Trying to create this province file: " + path);
             Saving.SaveTextFile(path, GlobalVars.buildProvinceData);
+            ProvinceLocalization();
         }
         else
         {
@@ -317,8 +318,7 @@ public partial class MainWindow : Form
         {
             ToErrorLog("No Valid province id\n");
         }
-
-        ProvinceLocalization();
+        
         GenerateColor();
     }
 
