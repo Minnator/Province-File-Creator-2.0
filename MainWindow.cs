@@ -193,6 +193,8 @@ public partial class MainWindow : Form
         {
             GlobalVars.buildProvinceData = "";
             GlobalVars.buildProvinceData += ProvNameGen() + "\r\n";
+            GlobalVars.buildProvinceData += DiscoveredByTechGroup() + "\r\n";
+
             OutputPreview.Text = GlobalVars.buildProvinceData;
             return;
         }
@@ -1114,6 +1116,8 @@ public partial class MainWindow : Form
     {
         var temp = "";
         if (WesternCheckbox.Checked)
+            temp += "discovered_by = ottoman\r\n";
+        if (OttomanCheckbox.Checked)
             temp += "discovered_by = western\r\n";
         if (EasternCheckbox.Checked)
             temp += "discovered_by = eastern\r\n";

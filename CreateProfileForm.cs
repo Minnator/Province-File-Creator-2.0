@@ -154,7 +154,7 @@ namespace EU4_Province_Creator
             DebugInfo.Text = "This profile name is already used.";
             return false;
         }
-        
+
         public bool CheckData()
         {
             DebugInfo.Text = "";
@@ -173,10 +173,25 @@ namespace EU4_Province_Creator
                 DebugInfo.Text += "No Vanilla folder selected! ";
                 return false;
             }
-            if (ValidProfileName()) 
+            if (ValidProfileName())
                 return true;
             DebugInfo.Text += "Invalid Profile Name!";
             return false;
+        }
+
+        private void ModFolderBox_TextChanged(object sender, EventArgs e)
+        {
+            folderProfile.modFolder = ModFolderBox.Text;
+        }
+
+        private void VanillaFolderBox_TextChanged(object sender, EventArgs e)
+        {
+            folderProfile.vanillaFolder = VanillaFolderBox.Text;
+        }
+
+        private void LocalisationFolderBox_TextChanged(object sender, EventArgs e)
+        {
+            folderProfile.localizationFolder = LocalisationFolderBox.Text;
         }
     }
 }

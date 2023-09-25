@@ -278,7 +278,11 @@ namespace EU4_Province_Creator
             {
                 GlobalVars.impassable.Add(int.Parse(id.ToString()!));
             }
-            GlobalVars.impassable.Add(int.Parse(GlobalVars.main.ProvIDInput.Text));
+            var newID = int.Parse(GlobalVars.main.ProvIDInput.Text);
+            if (!GlobalVars.impassable.Contains(newID))
+            {
+                GlobalVars.impassable.Add(newID);
+            }
         }
 
         public static void GetMaxProvinces()
